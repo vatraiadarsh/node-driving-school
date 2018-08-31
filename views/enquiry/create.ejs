@@ -1,0 +1,93 @@
+<% include ../shared/header.ejs %>
+
+<section>
+    <div class="row">
+
+        <div class="pull-right">
+            <br>
+            <br>
+            <a href="/enquiry" class="btn btn-md btn-primary">
+                <i class="fa fa-eye"></i> View enquiries
+            </a>
+            <hr>
+            <div class="alert alert-info">
+                Enquiry Persons name must be unique than others
+                <hr>
+                All fields are required!
+            </div>
+        </div>
+
+        <div class="col-md-8">
+
+            <div class="page-header">
+                <h1>Add new Enquiry</h1>
+            </div>
+
+            <form class="ajaxForm" method="post" role="form" data-parsley-validate="" novalidate="">
+                <div class="form-group">
+                    <label for="name"> Person's name *</label>
+                    <input type="text" name="person_name" placeholder="Enter Person's name" class="form-control"
+                        required="required">
+                </div>
+                <div class="form-group">
+                    <label for="course name"> Course name *</label>
+                    <select class="form-control easyui-combobox" style="width:100%;" name="name"><% for(var i = data.length - 1; i >= 0; i--) { %><option value="<%=data[i]._id %>"> <%=data[i].name %></option><% } %>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="fees">course Duration</label>
+                    <select class="form-control easyui-combobox" style="width:100%;" name="duration"> <% for(var i = data.length - 1; i >= 0; i--) { %> <option value="<%=data[i]._id %>"> <%=data[i].duration %> </option><% } %>
+                    </select>
+                 </div>
+                <div class="form-group">
+                    <label for="duration">DOB *</label>
+                    <input type="text" name="dob" placeholder="Enter date of birth" class="form-control" required="required">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" name="email" placeholder="Enter your email " class="form-control" required="required">
+                </div>
+                <div class="form-group">
+                    <label for="address">Address *</label>
+                    <input type="text" name="address" id="location" placeholder="Enter your address " class="form-control" required="required" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="longitude">Longitude *</label>
+                    <input type="text" name="longitude" placeholder="Longitude" class="form-control" id="longitude" readonly="readonly">
+                </div>           
+                <div class="form-group">
+                    <label for="latutude">Latitude *</label>
+                    <input type="text" name="latitude" placeholder="Latitude" class="form-control" id="latitude" readonly="readonly">
+                </div>
+                  
+                <div class="form-group">
+                    <label for="contact no">Contact no *</label>
+                    <input type="text" name="contact_no" placeholder="Enter Course duration" class="form-control"
+                        required="required">
+                </div>
+                <div class="form-group">
+                    <label for="timing">Timing *</label>
+                    <input type="text" name="timing" placeholder="Enter Course duration" class="form-control" required="required">
+                </div>
+
+
+
+                <button type="submit" class="btn btn-success">Save</button>
+                <%# <button type="submit" name="ctn" class=" btn btn-success" >Save & Continue</button> %>
+                <br>
+                <br>
+                <br>
+            </form>
+
+        </div>
+
+        <div class="col-md-12">
+            <div id="map" style="min-height: 400px"></div>
+          </div>
+
+
+    </div>
+</section>
+
+<% include ../shared/footer.ejs %>

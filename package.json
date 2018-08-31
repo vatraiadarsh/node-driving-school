@@ -1,0 +1,19 @@
+{
+  "name": " DrivingSchool ",
+  "version": "1.0.0",
+  "description": "Software for driving school",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adarsha Bhattarai",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "mongodb": "^3.1.0-beta4",
+    "nodemon": "^1.18.4"
+  }
+}

@@ -1,0 +1,67 @@
+<% include ../shared/header.ejs %>
+
+<section>
+  <div class="row">
+
+    <div class="pull-right">
+      <br>
+      <br>
+      <a href="/courses" class="btn btn-md btn-primary">
+        <i class="fa fa-eye"></i> View Courses
+      </a>
+      <hr>
+      <div class="alert alert-info">
+        Course name must be unique than others
+        <hr>
+        All fields are required!
+      </div>
+    </div>
+
+    <div class="col-md-8">
+
+      <div class="page-header">
+        <h1>Add new Courses</h1>
+      </div>
+
+      <form class="ajaxForm" method="post" role="form" data-parsley-validate="" novalidate="">
+        <div class="form-group">
+          <label for="name"> Course name *</label>
+          <input type="text" name="name" placeholder="Enter Course name" class="form-control" required="required">
+        </div>
+        <div class="form-group">
+          <label for="description"> Description *</label>
+          <textarea name="desc" placeholder="Enter Course description" class="form-control" required="required"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="fees">Fees *</label>
+          <input type="text" name="fees" placeholder="Enter Course fees" class="form-control" required="required">
+        </div>
+        <div class="form-group">
+          <label for="duration">Duration *</label>
+          <input type="text" name="duration" placeholder="Enter Course duration" class="form-control" required="required">
+        </div>
+
+        <div class="form-group">
+          <label for="duration">Shift *</label>
+          <label class="radio-inline"><input type="radio" value="my prefered time" name="shift" checked> My prefered time </label>
+          <label class="radio-inline"><input type="radio" value="morning" name="shift" > Morning </label>
+          <label class="radio-inline"><input type="radio" value="day" name="shift"> Day </label>
+          <label class="radio-inline"><input type="radio" value="evening" name="shift"> Evening </label>
+          
+        </div>
+
+        <button type="submit" class="btn btn-success">Save</button>
+        <%# <button type="submit" name="ctn" class=" btn btn-success" >Save & Continue</button> %>
+
+      </form>
+
+    </div>
+
+
+
+  </div>
+</section>
+
+
+<!-- Page footer-->
+<% include ../shared/footer.ejs %>

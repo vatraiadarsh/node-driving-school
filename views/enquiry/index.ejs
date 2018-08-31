@@ -1,0 +1,58 @@
+<% include ../shared/header.ejs %>
+      <section>
+         <!-- Page content-->
+         <div class="content-wrapper">
+            <h3>Enquiry
+               <small>All Enquiry</small>
+            </h3>
+            <div class="row">
+              <div class="pull-right">
+                <a href="/enquiry/create" class="btn btn-md btn-primary">
+                  <i class="fa fa-plus"></i> Add Enquiry
+                </a>
+              </div>
+              <div class="col-md-12">
+                <table class="table table-responsive table-hover">
+                  <thead>
+                    <tr>
+                      <th> ID </th>
+                      <th> Person Name</th>
+                      <th> Course Name </th>
+                      <th> Course duration </th>
+                      <th> Dob </th>
+                      <th> Email </th>
+                      <th> Address </th>
+                      <th> Contact no </th>
+                      <th> Timing </th>
+                      <th>Created Date</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% for(i=data.length - 1; i >= 0; i--) { %>
+                      <tr>
+                        <td><%= i+1 %></td>
+                        <td><%= data[i].personName %></td>
+                        <td><%= (data[i].details.length > 0) ? data[i].details[0].name : "Course has been removed" %></td>
+                        <td><%= (data[i].details.length > 0) ? data[i].details[0].duration : "Duration not available" %>%></td>
+                        <td><%= data[i].dob %></td>
+                        <td><%= data[i].email %> </td> 
+                        <td><%= data[i].address %> </td> 
+                        <td><%= data[i].contactNo %> </td> 
+                        <td><%= data[i].timing %> </td> 
+                        <td><%= data[i].date %></td>
+                        <td>
+                          <a href="/courses/delete/<%= data[i]._id %>" class="ajaxClick btn btn-danger btn xs">Delete
+                          <i class="fa fa-trash-o" aria-hidden="true"></i>
+                          </a>
+                        </td>
+                      </tr>
+                    <% } %> 
+                  </tbody>
+                </table>
+              </div>
+            </div>
+         </div>
+      </section>
+      <!-- Page footer-->
+<% include ../shared/footer.ejs %>

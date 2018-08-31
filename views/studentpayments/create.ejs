@@ -1,0 +1,68 @@
+<% include ../shared/header.ejs %>
+
+<section>
+    <div class="row">
+
+        <div class="pull-right">
+            <br>
+            <br>
+            <a href="/studentpayments" class="btn btn-md btn-primary">
+                <i class="fa fa-eye"></i> View Student Payment
+            </a>
+            <hr>
+            <div class="alert alert-info">
+                Enquiry Persons name must be unique than others
+                <hr>
+                All fields are required!
+            </div>
+        </div>
+
+        <div class="col-md-8">
+
+            <div class="page-header">
+                <h1>Add new Studentpayments</h1>
+            </div>
+
+
+            <% for(var i = data.length - 1; i >= 0; i--) { %>
+
+            <form class="ajaxForm" method="post" role="form" data-parsley-validate="" novalidate="">
+                
+                <div class="col-md-12" id="payments">
+                    <div class="input-group form-group">
+                      <input type="text" name="payments[]" class="form-control" placeholder="Enter payments">
+                      <span class="input-group-addon click_to_close">
+                        <i class="fa fa-times"></i> (Clear)
+                      </span>
+                    </div>
+                    <div class="input-group form-group">
+                      <input type="text" name="payments[]" class="form-control" placeholder="Enter payments">
+                      <span class="input-group-addon click_to_close">
+                        <i class="fa fa-times"></i> (Clear)
+                      </span>
+                    </div>
+                  </div>
+
+
+                <button type="submit" class="btn btn-success">Save</button>
+                <button type="button" class="btn btn-danger pull-right" id="add_new_payment_field">
+                    <i class="fa fa-plus"></i> Add new Payment
+                  </button>
+                <br>
+                <br>
+                <br>
+            </form>
+
+            <% } %>
+
+        </div>
+
+        <div class="col-md-12">
+            <div id="map" style="min-height: 400px"></div>
+          </div>
+
+
+    </div>
+</section>
+
+<% include ../shared/footer.ejs %>
