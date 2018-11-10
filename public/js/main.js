@@ -70,7 +70,7 @@ $(function() {
            radiusInput: null,
            locationNameInput: $('#location')
        },
-       enableAutocompleteBlur: true,
+       enableAutocompleteBlur: true,       
        addressFormat: 'sublocality',
        zoom: 15
    });
