@@ -5,7 +5,7 @@ var MongoClient = mongodb.MongoClient;
 router.use(express.static('public'));
 
 // Mongo DB
-MongoClient.connect('mongodb://adarsha:adarsha123@ds159273.mlab.com:59273/', {
+MongoClient.connect('mongodb://adarsha:adarsha123@ds159273.mlab.com:59273/node_deploy_school', {
   useNewUrlParser: true
 }, function (err, db) {
   var dbo = db.db("node_deploy_school");
